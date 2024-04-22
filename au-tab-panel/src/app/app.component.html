@@ -6,14 +6,14 @@
 <div class="container">
 
     <ng-template #headerButtons>
-
+        <!-- make tabPanel available to the template used inside au-tab-panel -->
         <button (click)="tabPanel.selectTab(loginTab)">Login</button>
         <button (click)="tabPanel.selectTab(signUpTab)">Sign Up</button>
 
     </ng-template>
 
 
-    <au-tab-panel id="tab-panel" #tabPanel>
+    <au-tab-panel id="tab-panel" #tabPanel [headerTemplate]="headerButtons">
 
         <au-tab title="Login" #loginTab [selected]="false">
             <form>
